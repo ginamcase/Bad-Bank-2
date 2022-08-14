@@ -7,13 +7,36 @@ function CreateAccount(){
   const ctx = React.useContext(UserContext);  
 
   function validate(field, label){
-      if (!field) {
-        setStatus('Error: ' + label);
-        setTimeout(() => setStatus(''),3000);
-        return false;
-      }
+    let isValid = true;
+    if (!field) {
+      setStatus('Error: ' + label);
+      setTimeout(() => setStatus(''), 3000);
+      return false;
+    }
+    if (label == 'email'){
+      isValid = String(field).toLowerCase().match(
+        /\S+@\S+\.\S+/
+      );
+      setStatus(isValid ? '' : 'Email is not valid');
+    }
+    if (label == 'password'){
+      isValid = field.length >= 6;
+      setStatus(isValid ? '': 'Password must be 8 characters');
+    }
+    if (label == 'name')
+    {
+      isValid = field.length >= 2;
+      setStatus(isValid ? '': 'Name is invalid');
+    }
+    if (!isValid){
+      console.log(status);
+      return false;
+    }
+    else {
       return true;
-  }
+    }
+}
+
 
   function handleCreate(){
     console.log(name,email,password);
@@ -48,9 +71,10 @@ function CreateAccount(){
               </>
             ):(
               <>
-              <h5>Success</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
+              <h5>Success!</h5>
+              <button type="submit" disabled={ (name && email && password) ?false:true} className="btn btn-light" onClick={clearForm}>Add another account</button>
               </>
+
             )}
     />
   )
