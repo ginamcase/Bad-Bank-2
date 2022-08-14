@@ -26,10 +26,6 @@ function NavBar(){
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#/balance/" data-toggle="tooltip" data-placement="bottom" title="Check your Balance Here">Balance</a>
-          </li>
-
-          <li className="nav-item">
             <a className="nav-link" href="#/alldata/" data-toggle="tooltip" data-placement="bottom" title="See All Data Here">AllData</a>
           </li>      
 
