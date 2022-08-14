@@ -8,24 +8,31 @@ function NavBar(){
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
+
           <li className="nav-item">
-            <a className="nav-link" href="#/CreateAccount/">Create Account</a>
+            <a className="nav-link" href="#/CreateAccount/" data-toggle="tooltip" data-placement="bottom" title="Create a New Account Here">Create Account</a>
           </li>
+
           <li className="nav-item">
-            <a className="nav-link" href="#/login/">Login</a>
+            <a className="nav-link" href="#/login/" data-toggle="tooltip" data-placement="bottom" title="Log In Here">Login</a>
           </li>
+
           <li className="nav-item">
-            <a className="nav-link" href="#/deposit/">Deposit</a>
+            <a className="nav-link" href="#/deposit/" data-toggle="tooltip" data-placement="bottom" title="Make a Deposit Here">Deposit</a>
           </li>
+
           <li className="nav-item">
-            <a className="nav-link" href="#/withdraw/">Withdraw</a>
+            <a className="nav-link" href="#/withdraw/" data-toggle="tooltip" data-placement="bottom" title="Make a Withdrawal Here">Withdraw</a>
           </li>
+
           <li className="nav-item">
-            <a className="nav-link" href="#/balance/">Balance</a>
+            <a className="nav-link" href="#/balance/" data-toggle="tooltip" data-placement="bottom" title="Check your Balance Here">Balance</a>
           </li>
+
           <li className="nav-item">
-            <a className="nav-link" href="#/alldata/">AllData</a>
-          </li>          
+            <a className="nav-link" href="#/alldata/" data-toggle="tooltip" data-placement="bottom" title="See All Data Here">AllData</a>
+          </li>      
+
         </ul>
       </div>
     </nav>
