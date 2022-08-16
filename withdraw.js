@@ -3,7 +3,7 @@ function Withdraw(){
   const [update, setUpdate] = React.useState('false');
   const [value, setValue] = React.useState("");
   const [show, setShow] = React.useState(true);
-  let data = JSON.stringify(ctx.users[ctx.users.length-1].balance);
+  let data = ctx.users[ctx.users.length-1].balance;
 
   const handleTextChange = (event) => {
     setValue(event.target.value);
@@ -15,6 +15,8 @@ function Withdraw(){
     data -= Number(balance);
     setUpdate(true);
     setShow(false);
+    ctx.users[0].balance = data
+    setValue("")
     }
     else{
       alert("Transaction Failed!");
@@ -32,6 +34,6 @@ function Withdraw(){
           <input type="number" width="200" id="balance" onChange={handleTextChange} value={value}></input>
           <button type="submit" disabled={ value ?false:true} className="btn btn-light" onClick={handleWithdraw}>Withdraw</button>
       </>}
-  />    
+    />    
   );
 };

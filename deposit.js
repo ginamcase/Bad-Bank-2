@@ -3,7 +3,7 @@ function Deposit(){
   const [update, setUpdate] = React.useState('false');
   const [value, setValue] = React.useState("");
   const [show, setShow] = React.useState(true);
-  let data = JSON.stringify(ctx.users[ctx.users.length-1].balance);
+  let data = ctx.users[ctx.users.length-1].balance;
 
   const handleTextChange = (event) => {
     setValue(event.target.value);
@@ -15,6 +15,8 @@ function Deposit(){
     data += Number(balance);
     setUpdate(true);
     setShow(false);
+    ctx.users[0].balance = data
+    setValue("")
     }
     else{
       alert("Must Be a Positive Number");
